@@ -1,0 +1,54 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the project"
+    },
+    "description": {
+      "type": "string",
+      "description": "Project description"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planning",
+        "active",
+        "completed",
+        "on_hold"
+      ],
+      "default": "planning",
+      "description": "Current project status"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of member email addresses"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Project due date"
+    },
+    "color": {
+      "type": "string",
+      "enum": [
+        "blue",
+        "green",
+        "purple",
+        "orange",
+        "red",
+        "pink",
+        "cyan"
+      ],
+      "default": "blue",
+      "description": "Project color theme"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

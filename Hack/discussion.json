@@ -1,0 +1,39 @@
+{
+  "name": "Discussion",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "ID of the associated project"
+    },
+    "message": {
+      "type": "string",
+      "description": "Discussion message content"
+    },
+    "parent_id": {
+      "type": "string",
+      "description": "ID of parent message for threading"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "message",
+        "task_update",
+        "system"
+      ],
+      "default": "message",
+      "description": "Type of message"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "File URLs for attachments"
+    }
+  },
+  "required": [
+    "project_id",
+    "message"
+  ]
+}
